@@ -1,3 +1,4 @@
+import Sidebar from "@/components/sideBar/Sidebar";
 import localFont from "next/font/local";
 import "./globals.css";
 
@@ -24,7 +25,12 @@ export default function RootLayout({ children }) {
         suppressHydrationWarning={true}
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        {children}
+        <main className="grid grid-cols-12 gap-4">
+          <aside className="col-span-2 min-h-screen bg-e-primary">
+            <Sidebar />
+          </aside>
+          <article className="col-span-10">{children}</article>
+        </main>
       </body>
     </html>
   );
